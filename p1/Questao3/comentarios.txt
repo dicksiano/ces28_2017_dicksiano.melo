@@ -1,0 +1,8 @@
+Meu design permite divide as responsabilidades:
+1) A classe Drink representa as bebidas que são preparadas misturando vários ingredientes
+2) A classe Beverage representa as bebidas que já estão prontas, por exemplo, uma cerveja ou um refrigerante.
+3) A classe Item serve como interface entre os dois tipos de bebidas. Além disso, caso o Pub deseje vender comida, cigarros ou outros items, essa classe permite facilmente expandir.
+4) As responsabilidades do método computeCost() foram dividas. O método isManyDrinks() checa se o cliente está pedindo muitas bebidas e o método hasDiscount() checa se o cliente possui desconto. Essas duas mudanças permitem que o código fique mais limpo e mais legível. Em vez de usar vários if-else para checar o preço da bebida, o conjunto de items fica dentro de uma ArrayList. Assim, é permitido adicionar novas bebidas.
+5) É possível modificar o nome e o preço dos items e no caso dos Drinks é possível modificar sua composição, ou seja, adicionar ou retirar ingredientes.
+6) É estranho que um preço seja inteiro. Eles devem ser double. Para não alterar os testes eu usei a função Math.ceil() apenas no valor do resultado de computeCost(). Os outros preços são double.
+
